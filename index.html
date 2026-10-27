@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMovie - Movie Plan Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="logo">🎬 MyMovie</h2>
+        <p class="sidebar-label">MENU</p>
+
+        <button class="nav-button active" data-page="discover">
+            Discover Movies
+        </button>
+
+        <button class="nav-button" data-page="watchlist">
+            My Watchlist
+        </button>
+
+        <div class="sidebar-footer">
+            <p>MyMovie v1.0</p>
+            <small>Your personal movie planner</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="discover" class="page active">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">YOUR MOVIE SPACE</p>
+                    <h1>Discover Movies</h1>
+                    <p class="subtitle">
+                        Find your next favourite movie.
+                    </p>
+                </div>
+            </header>
+
+            <div class="search-panel">
+                <label for="movieSearch">Search movie</label>
+
+                <div class="search-row">
+                    <input
+                        type="text"
+                        id="movieSearch"
+                        placeholder="Enter a movie title..."
+                    >
+
+                    <button id="searchButton" class="primary-button">
+                        Search
+                    </button>
+                </div>
+
+                <label for="genreFilter">Choose a genre</label>
+
+                <select id="genreFilter">
+                    <option value="">All genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                </select>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Movie Discovery</h2>
+                    <p class="subtitle">
+                        Your movie search results will appear here.
+                    </p>
+                </div>
+            </div>
+
+            <div id="movieResults" class="movie-grid">
+                <div class="empty-state">
+                    <span class="empty-icon">🍿</span>
+                    <h3>Ready to find a movie?</h3>
+                    <p>
+                        Search for a movie to get started.
+                    </p>
+                </div>
+            </div>
+
+            <p id="discoverMessage" class="message" role="status"></p>
+        </section>
+
+        <section id="watchlist" class="page">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+                    <h1>My Watchlist</h1>
+                    <p class="subtitle">
+                        Keep track of the movies you want to watch.
+                    </p>
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p>Total Movies</p>
+                    <h2 id="totalMovies">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Watched</p>
+                    <h2 id="watchedMovies">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Watch Time</p>
+                    <h2 id="watchTime">0 min</h2>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Saved Movies</h2>
+                    <p class="subtitle">
+                        Your saved movies will appear here.
+                    </p>
+                </div>
+            </div>
+
+            <div id="watchlistResults" class="movie-grid">
+                <div class="empty-state">
+                    <span class="empty-icon">🎞️</span>
+                    <h3>Your watchlist is empty</h3>
+                    <p>
+                        Discover a movie and add it to your collection.
+                    </p>
+                </div>
+            </div>
+
+            <p id="watchlistMessage" class="message" role="status"></p>
+        </section>
+
+    </main>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
